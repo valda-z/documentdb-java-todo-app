@@ -35,6 +35,16 @@ var todoApp = {
       "json");
   },
 
+  getCertInfo: function() {
+    $.post(todoApp.apiEndpoint, {
+        "method": "getCertInfo"
+      },
+      function(data) {
+        todoApp.ui_cert().text(data.ret);
+      },
+      "json");
+  },
+
   updateTodoItem: function(id, isComplete) {
     $.post(todoApp.apiEndpoint, {
         "method": "updateTodoItem",
@@ -146,7 +156,11 @@ var todoApp = {
   },
 
   ui_updateButton: function() {
-    return $(".todoUpdatePanel button");
+      return $(".todoUpdatePanel button");
+    },
+
+  ui_cert: function() {
+    return $(".todoCertDiv span");
   },
 
   ui_updateForm: function() {
@@ -166,6 +180,7 @@ var todoApp = {
     todoApp.bindUpdateCheckboxes();
 
     todoApp.getTodoItems();
+    todoApp.getCertInfo();
   }
 };
 

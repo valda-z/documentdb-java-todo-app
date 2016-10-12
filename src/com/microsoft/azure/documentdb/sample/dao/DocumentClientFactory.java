@@ -5,8 +5,8 @@ import com.microsoft.azure.documentdb.ConsistencyLevel;
 import com.microsoft.azure.documentdb.DocumentClient;
 
 public class DocumentClientFactory {
-    private static final String HOST = "https://docdb-java-sample.documents.azure.com:443/";
-    private static final String MASTER_KEY = "[YOUR_KEY_HERE]";
+    private static final String HOST = "https://testvaldadb.documents.azure.com:443/";
+    private static final String MASTER_KEY = "ZdvFlbd2UC9GsBfoPbNzRT6T4tWHxI0DfNSFY7p2FICdf62nROCInRy8eKaXzm0miVmn4eq3UMz20FawsghE7w==";
 
     private static DocumentClient documentClient;
 
