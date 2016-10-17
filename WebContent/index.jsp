@@ -7,7 +7,7 @@
   <title>Azure DocumentDB Java Sample</title>
 
   <!-- Bootstrap -->
-  <link href="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     /* Add padding to body for fixed nav bar */
@@ -31,7 +31,7 @@
     <h1>My ToDo List</h1>
 
       <div class="todoCertDiv">
-        <span>????</span>
+        <b>Client cert: </b><span>????</span>
       </div>
 
     <hr/>
@@ -85,8 +85,8 @@
   </div>
 
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
-  <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/bootstrap.min.js"></script>
+  <script src="vendor/jquery-3.1.1.min.js"></script>
+  <script src="vendor/bootstrap-3.3.7/js/bootstrap.min.js"></script>
   <script src="assets/todo.js"></script>
 </body>
 </html>
