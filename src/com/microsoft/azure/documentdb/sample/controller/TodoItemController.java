@@ -2,6 +2,7 @@ package com.microsoft.azure.documentdb.sample.controller;
 
 import java.util.List;
 
+import com.microsoft.azure.documentdb.sample.esb.TopicHelper;
 import lombok.NonNull;
 
 import com.microsoft.azure.documentdb.sample.dao.TodoDao;
@@ -28,7 +29,12 @@ public class TodoItemController {
             @NonNull String category, boolean isComplete) {
         TodoItem todoItem = TodoItem.builder().name(name).category(category)
                 .complete(isComplete).build();
-        return todoDao.createTodoItem(todoItem);
+        TodoItem itm = todoDao.createTodoItem(todoItem);
+
+        //Create Topic message and send it to Topic.
+        new TopicHelper().sendToDo(itm);
+
+        return itm;
     }
 
     public boolean deleteTodoItem(@NonNull String id) {
