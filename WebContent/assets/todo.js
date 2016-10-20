@@ -1,5 +1,5 @@
 /**
- * ToDo App
+ * To-Do App
  */
 
 var todoApp = {
@@ -94,7 +94,7 @@ var todoApp = {
       $(this).text("Updating...");
       $(this).prop("disabled", true);
 
-      // Call api to update todo items.
+      // Call api to update to-do items.
       $.each(todoApp.ui_updateId(), function(index, value) {
         todoApp.updateTodoItem(value.name, value.value);
         $(value).remove();

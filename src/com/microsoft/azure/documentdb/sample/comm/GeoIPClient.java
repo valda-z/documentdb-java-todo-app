@@ -21,8 +21,8 @@ public class GeoIPClient {
         }
         try {
             // REST client for GeoIP service
-            // ### please change IP address to VM ip address
-            HttpResponse<JsonNode> jrequest = Unirest.get("http://0.0.0.0:5000/" + ip)
+            // TODO: please change IP address to VM ip address
+            HttpResponse<JsonNode> jrequest = Unirest.get("http://<ip-address-geoip-machine>:5000/" + ip)
                     //.queryString("name", "Mark")
                     //.field("last", "Polo")
                     .asJson();

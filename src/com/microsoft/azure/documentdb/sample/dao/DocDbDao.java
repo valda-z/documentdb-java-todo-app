@@ -149,7 +149,7 @@ public class DocDbDao implements TodoDao {
                     databaseCache = documentClient.createDatabase(
                             databaseDefinition, null).getResource();
                 } catch (DocumentClientException e) {
-                    // TODO: Something has gone terribly wrong - the app wasn't
+                    // Something has gone terribly wrong - the app wasn't
                     // able to query or create the collection.
                     // Verify your connection, endpoint, and key.
                     e.printStackTrace();
@@ -183,7 +183,7 @@ public class DocDbDao implements TodoDao {
                             getTodoDatabase().getSelfLink(),
                             collectionDefinition, null).getResource();
                 } catch (DocumentClientException e) {
-                    // TODO: Something has gone terribly wrong - the app wasn't
+                    // Something has gone terribly wrong - the app wasn't
                     // able to query or create the collection.
                     // Verify your connection, endpoint, and key.
                     e.printStackTrace();

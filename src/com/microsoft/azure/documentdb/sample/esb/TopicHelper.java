@@ -22,9 +22,11 @@ public class TopicHelper {
     public void sendToDo(TodoItem itm){
         Configuration config =
                 ServiceBusConfiguration.configureWithSASAuthentication(
-                        "valdadocdb",
+                        // TODO: provide valid Service Bus name
+                        "<service-bus-name>",
                         "RootManageSharedAccessKey",
-                        "p1TU57GFQtPouySan3qUJ+waRevE/6WyO2EXtcHX43M=",
+                        // TODO: provide valid KEY for Service Bus
+                        "<service-bus-key>",
                         ".servicebus.windows.net"
                 );
 
@@ -37,6 +39,7 @@ public class TopicHelper {
             //Append category information to message (or any other property
             message.setProperty("Category", itm.getCategory());
             //send message to topic
+            // TODO: provide valid Topic name
             service.sendTopicMessage("valdatopic1", message);
         } catch (ServiceException e) {
             _log.error("Error sending topic", e.fillInStackTrace());
