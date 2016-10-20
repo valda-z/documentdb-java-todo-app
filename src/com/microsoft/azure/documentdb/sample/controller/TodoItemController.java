@@ -32,7 +32,11 @@ public class TodoItemController {
         TodoItem itm = todoDao.createTodoItem(todoItem);
 
         //Create Topic message and send it to Topic.
-        new TopicHelper().sendToDo(itm);
+        try {
+            new TopicHelper().sendToDo(itm);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         return itm;
     }
