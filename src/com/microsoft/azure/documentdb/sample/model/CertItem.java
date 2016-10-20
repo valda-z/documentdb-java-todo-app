@@ -9,6 +9,8 @@ public class CertItem {
     private String issuer;
     private String subject;
     private String thumbprint;
+    private String ip;
+    private String geoip;
 
     public String getRet() {
         return ret;
@@ -40,5 +42,21 @@ public class CertItem {
 
     public void setThumbprint(String thumbprint) {
         this.thumbprint = thumbprint;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public String getGeoip() {
+        return geoip;
+    }
+
+    public void setGeoip(String geoip) {
+        this.geoip = geoip;
     }
 }

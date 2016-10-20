@@ -1,5 +1,6 @@
 package com.microsoft.azure.documentdb.sample.controller;
 
+import com.microsoft.azure.documentdb.sample.comm.GeoIPClient;
 import com.microsoft.azure.documentdb.sample.model.CertItem;
 import org.apache.commons.codec.binary.Base64;
 
@@ -40,7 +41,7 @@ public class CertController {
         return buf.toString();
     }
 
-    public CertItem parse(String data){
+    public CertItem parse(String data, String ip){
         CertItem itm = new CertItem();
         String ret = "N/A";
         {
@@ -68,6 +69,7 @@ public class CertController {
                 //
             }
         }
+        ret += " # " + new GeoIPClient().query(ip);
         itm.setRet(ret);
         return itm;
     }

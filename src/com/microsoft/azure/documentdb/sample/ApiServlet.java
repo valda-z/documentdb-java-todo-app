@@ -40,6 +40,15 @@ public class ApiServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Gson gson = new Gson();
 
+	// split IP address format used in Azure Web App
+	private String getClientIp(String ip){
+		if(ip == null){
+			return null;
+		}else{
+			return ip.split(":")[0];
+		}
+	}
+
 	@Override
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -68,7 +77,10 @@ public class ApiServlet extends HttpServlet {
 					isComplete));
 			break;
 		case GET_CERTINFO:
-			CertItem itm = new CertController().parse(request.getHeader("X-ARR-ClientCert"));
+			CertItem itm = new CertController().parse(
+					request.getHeader("X-ARR-ClientCert"),
+					getClientIp(request.getHeader("HTTP_X_FORWARDED_FOR"))
+			);
 			apiResponse = gson.toJson(itm);
 			break;
 		default:
